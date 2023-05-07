@@ -38,7 +38,7 @@ const Main = () => {
           <ModalProvider>
             {isLoading ? (
               <div className="m-auto w-full flex justify-center">
-                <Spinner message="The jobs are loading" />
+                <Spinner message="Loading the jobs..." />
               </div>
             ) : null}
             <Container {...containerProps} />
