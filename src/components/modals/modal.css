@@ -1,0 +1,32 @@
+.btn-close {
+  @apply bg-red-600 p-3 w-8 h-8 right-5 top-5 active:scale-95 hover:bg-red-800 
+  transition-all  flex justify-center items-center text-xl absolute;
+}
+
+.modal__container {
+  background-color: #1d1c1c9b;
+  @apply left-0 top-0 w-full h-screen z-50 fixed flex m-auto 
+  text-white justify-center items-center backdrop-blur-sm;
+}
+
+.modal__form-container {
+  @apply bg-white p-3 w-3/4 h-5/6 pb-8 lg:w-2/4 flex relative rounded-lg;
+}
+
+.modal__form {
+  @apply grid grid-cols-2 gap-5  w-3/4 m-auto mt-12;
+}
+
+.modal__form-input {
+  @apply border mt-1 mb-5 w-full border-b-gray-600 border-b-2 border-r-0 
+  border-l-0 border-t-0  outline-none focus:border-blue-500 
+  font-medium text-blue-600 p-2;
+}
+
+.modal__form-label {
+  @apply text-black text-lg font-medium;
+}
+
+.modal__form-btn {
+  @apply w-2/4 m-auto absolute top-[25rem] left-40 hover:text-black;
+}

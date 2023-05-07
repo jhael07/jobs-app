@@ -1,0 +1,13 @@
+.nav__container {
+  @apply flex justify-between w-full p-3 px-6 text-white bg-blue-500 items-center;
+}
+
+.nav__items {
+  @apply hover:shadow font-medium p-4 hover:text-green-500 
+  transition-all rounded-b hover:bg-white;
+}
+
+.nav__items-logout {
+  @apply hover:shadow hover:bg-white py-4 px-1.5 transition-all 
+  rounded-b hover:text-red-600 cursor-pointer;
+}

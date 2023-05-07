@@ -1,0 +1,11 @@
+.login__container {
+  @apply w-[400px] h-[480px] bg-white m-auto  rounded-lg shadow-xl;
+}
+
+.login__header {
+  @apply bg-blue-800 p-2 justify-center flex text-white text-xl rounded-t-md;
+}
+
+.login__form {
+  @apply flex-col flex justify-center m-auto w-5/6  items-center mt-5 p-4 gap-8;
+}

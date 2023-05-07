@@ -1,0 +1,56 @@
+@tailwind base;
+:root {
+  --secondary: rgb(214, 227, 255);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(rgba(137, 137, 137, 0));
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-gray-100;
+}
+.bg-general {
+  @apply bg-gradient-to-r from-cyan-500 to-blue-500 h-screen relative flex justify-center flex-col;
+}
+.btn-green {
+  @apply bg-green-400 p-2  rounded-md  border-4 border-transparent 
+  hover:scale-105 transition-all active:scale-95 active:bg-green-400 
+  active:font-medium active:text-white active:border-green-700 
+  hover:border-double hover:border-4 hover:border-green-500 hover:bg-transparent;
+}
+
+.input-general {
+  @apply p-2 rounded-md w-4/5 text-center border border-gray-500 outline-blue-400 outline-1;
+}
+
+.container {
+  @apply top-0 w-[95vw] m-auto bg-white;
+}

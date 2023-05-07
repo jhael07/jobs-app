@@ -1,0 +1,16 @@
+.options {
+  @apply flex gap-6 p-3 w-11/12 m-auto justify-end mt-2 items-center;
+}
+
+.user-greeting {
+  @apply text-4xl border-b-4 border-blue-400 w-fit p-3 px-6 mt-3 ml-6;
+}
+
+.search-bar {
+  @apply p-2 h-9 w-4/12 border border-gray-600 rounded  outline-blue-400;
+}
+
+
+.hola{
+  color: #1d1c1c9b;
+}
