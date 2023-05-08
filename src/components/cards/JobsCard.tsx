@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface Job {
   job: JobType;
 }
+
 const JobsCard = (props: Job) => {
   const { job } = props;
   return (
