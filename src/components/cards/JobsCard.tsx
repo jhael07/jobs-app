@@ -1,6 +1,7 @@
 import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { JobType } from "./jobsCardTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./jobsCards.css";
 
 interface Job {
   job: JobType;
@@ -10,16 +11,12 @@ const JobsCard = (props: Job) => {
   const { job } = props;
   return (
     <>
-      <div className="w-5/6 p-3 rounded-lg m-auto  border-2 shadow-md bg-white relative group ">
-        <div
-          className="absolute opacity-0 right-5 flex  gap-3 top-[-0.6rem] group-hover:opacity-100  group-hover:top-0"
-          style={{ transitionDuration: ".3s" }}
-        >
-          <button className="p-3 rounded-b bg-blue-300  flex justify-center items-center  text-blue-700 ">
+      <div className="card__container group">
+        <div className="card__action group-hover:opacity-100  group-hover:top-0">
+          <button className="card__action-edit">
             <FontAwesomeIcon icon={faPencil} />
           </button>
-          <button className="p-3 rounded-b bg-red-500 hover:bg-red-600  justify-center  flex text-white">
-            {" "}
+          <button className="card__action-delete">
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>
