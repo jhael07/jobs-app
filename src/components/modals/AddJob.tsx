@@ -5,6 +5,7 @@ import { Status } from "../../pages/enums";
 import { useState } from "react";
 import { createJob } from "../../api/jobs";
 import Spinner from "../spinner/Spinner";
+import Swal from "sweetalert2";
 
 const AddJob = () => {
   const { enableModalAddJob, setEnableModalAddJob } = useContext(ModalContext);
@@ -20,7 +21,6 @@ const AddJob = () => {
   });
 
   const handleChange = (e: any) => {
-    console.log(e.target.name);
     setNewJob({ ...newJob, [e.target.name]: e.target.value });
   };
 
@@ -31,13 +31,33 @@ const AddJob = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    const { title, company, img_url, status } = newJob;
+
+    if (!title) {
+      Swal.fire("Error", "The title cannot be empty", "error");
+      return;
+    }
+    if (!company) {
+      Swal.fire("Error", "The Company field cannot be empty", "error");
+      return;
+    }
+    if (!img_url) {
+      Swal.fire("Error", "The Img field cannot be empty", "error");
+      return;
+    } else if (!img_url.includes("http") || !img_url.includes("https")) {
+      Swal.fire("Error", "The Img field needs to be a valid url.", "error");
+      return;
+    }
+    if (!status) {
+      Swal.fire("Error", "The status field cannot be empty", "error");
+      return;
+    }
+
     setIsLoading(true);
     await createJob(newJob);
     setIsLoading(false);
     window.location.reload();
   };
-
-  console.log(newJob);
 
   return (
     <div className={`${enableModalAddJob ? "visible" : "hidden"} modal__container`}>

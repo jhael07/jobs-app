@@ -1,6 +1,9 @@
 import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { JobType } from "./jobsCardTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { deleteJob } from "../../api/jobs";
+import { useState } from "react";
+import Spinner from "../spinner/Spinner";
 import "./jobsCards.css";
 
 interface Job {
@@ -9,6 +12,14 @@ interface Job {
 
 const JobsCard = (props: Job) => {
   const { job } = props;
+
+  const handleDelete = async (id: null | string) => {
+    try {
+      await deleteJob(id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className="card__container group">
@@ -16,7 +27,7 @@ const JobsCard = (props: Job) => {
           <button className="card__action-edit">
             <FontAwesomeIcon icon={faPencil} />
           </button>
-          <button className="card__action-delete">
+          <button className="card__action-delete" onClick={() => handleDelete(job?.id)}>
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>
