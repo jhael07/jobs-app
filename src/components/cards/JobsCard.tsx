@@ -2,8 +2,6 @@ import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { JobType } from "./jobsCardTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { deleteJob } from "../../api/jobs";
-import { useState } from "react";
-import Spinner from "../spinner/Spinner";
 import "./jobsCards.css";
 
 interface Job {
@@ -45,13 +43,22 @@ const JobsCard = (props: Job) => {
             <b>Company:</b> <span className="bg-white p-1 rounded">{job.company}</span>
           </h1>
           <h1 className="mt-5">
-            <b>Status:</b> <span className="bg-white p-1 rounded">{job.status}</span>
+            <b>Status:</b>{" "}
+            <span
+              className={`bg-white p-1 px-2 rounded ${
+                job.status === "Pending..." && "bg-yellow-200"
+              } ${job.status === "Accepted" && "bg-green-300"}
+              ${job.status === "Interview" && "bg-cyan-200"}
+              `}
+            >
+              {job.status}
+            </span>
           </h1>
         </div>
 
-        <div className="flex gap-2 items-center mt-4 w-full">
+        <div className="flex gap-2 items-center mt-6 w-full">
           <b>Categories:</b>
-          <div className="w-full flex gap-3">
+          <div className="w-full flex gap-3 items-center">
             {job.categories.map((category: string) => (
               <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded">{category}</span>
             ))}
