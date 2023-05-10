@@ -12,6 +12,10 @@ export type PagesContextProps = {
 export type ModalContextType = {
   enableModalAddJob: Boolean;
   setEnableModalAddJob: React.Dispatch<React.SetStateAction<boolean>>;
+  enableModalEditJob: Boolean;
+  setEnableModalEditJob: React.Dispatch<React.SetStateAction<boolean>>;
+  modalId: string;
+  setModalId: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type ModalContextProps = {

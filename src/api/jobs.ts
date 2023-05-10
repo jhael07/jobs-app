@@ -20,6 +20,14 @@ export const createJob = async (newJob: object) => {
     console.log(err);
   }
 };
+export const updateJob = async (id: string, updateJob: object) => {
+  try {
+    const { data } = await axios.patch(`${API_URL}jobs?id=eq.${id}`, updateJob, { headers });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export const deleteJob = async (id: string | null) => {
   try {
