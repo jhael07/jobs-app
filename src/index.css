@@ -45,8 +45,7 @@ body {
   hover:scale-105 transition-all active:scale-95 active:bg-green-400 
   active:font-medium active:text-white active:border-green-700 
   hover:border-double hover:border-4 hover:border-green-500 hover:bg-transparent
-  min-w-fit
-  ;
+  min-w-fit;
 }
 
 .input-general {
@@ -55,4 +54,10 @@ body {
 
 .container {
   @apply top-0 w-[95vw] m-auto bg-white;
+}
+
+@media (max-width: 700px) {
+  .container {
+    @apply w-full;
+  }
 }

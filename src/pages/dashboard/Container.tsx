@@ -59,7 +59,7 @@ const Container = (props: ContainerProps) => {
             {jobs.length < 1 && (
               <>
                 <FontAwesomeIcon icon={faClose} className="m-auto text-7xl text-gray-500" />
-                <h1 className="m-auto text-4xl text-gray-500">There is not jobs yet.</h1>
+                <h1 className="m-auto text-4xl text-gray-500">There are not jobs yet.</h1>
               </>
             )}
             {currentCards.map((job, index) => {
