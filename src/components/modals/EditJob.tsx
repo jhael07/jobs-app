@@ -22,7 +22,6 @@ const EditJob = (props: JobType) => {
     status,
   });
 
-  console.log(newJob);
   const handleChange = (e: any) => {
     setNewJob({ ...newJob, [e.target.name]: e.target.value });
   };

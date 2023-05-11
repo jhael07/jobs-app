@@ -30,7 +30,7 @@ const JobsCard = (props: Job) => {
 
   return (
     <>
-      <EditJob {...job}/>
+      <EditJob {...job} />
       <div className="card__container group">
         <div className="card__action group-hover:opacity-100  group-hover:top-0">
           <button className="card__action-edit" onClick={() => handleEdit(job.id)}>
@@ -71,8 +71,10 @@ const JobsCard = (props: Job) => {
         <div className="flex gap-2 items-center mt-6 w-full">
           <b>Categories:</b>
           <div className="w-full flex gap-3 items-center">
-            {job.categories.map((category: string) => (
-              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded">{category}</span>
+            {job.categories.map((category: string, index: number) => (
+              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded" key={index}>
+                {category}
+              </span>
             ))}
           </div>
         </div>
