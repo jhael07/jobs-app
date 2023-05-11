@@ -56,11 +56,11 @@ const JobsCard = (props: Job) => {
           <h1 className="mt-5">
             <b>Status:</b>{" "}
             <span
-              className={`bg-white p-1 px-2 rounded ${
+              className={` p-1 px-2 rounded ${
                 job.status === "Pending..." && "bg-yellow-200"
               } ${job.status === "Accepted" && "bg-green-300"}
               ${job.status === "Interview" && "bg-cyan-200"}
-              ${job.status === "Rejected" && "bg-red-400 text-red-900"}
+              ${job.status === "Rejected" && "bg-red-500 text-red-900"}
               `}
             >
               {job.status}
@@ -71,10 +71,8 @@ const JobsCard = (props: Job) => {
         <div className="flex gap-2 items-center mt-6 w-full">
           <b>Categories:</b>
           <div className="w-full flex gap-3 items-center">
-            {job.categories.map((category: string, index: number) => (
-              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded" key={index}>
-                {category}
-              </span>
+            {job.categories.map((category: string) => (
+              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded">{category}</span>
             ))}
           </div>
         </div>
