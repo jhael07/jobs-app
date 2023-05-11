@@ -3,14 +3,19 @@
 }
 
 .user-greeting {
-  @apply text-4xl border-b-4 border-blue-400 w-fit p-3 px-6 mt-3 ml-6;
+  @apply text-4xl border-b-4 border-blue-400 min-w-fit w-fit p-3 px-6 mt-3 ml-6;
 }
 
 .search-bar {
-  @apply p-2 h-9 w-4/12 border border-gray-600 rounded  outline-blue-400;
+  @apply p-2 h-9 w-4/12 border border-gray-600 rounded   min-w-fit outline-blue-400;
 }
 
-
-.hola{
+.hola {
   color: #1d1c1c9b;
+}
+
+@media (max-width: 600px) {
+  .columns {
+    @apply grid-cols-1 !important;
+  }
 }

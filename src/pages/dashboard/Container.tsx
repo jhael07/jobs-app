@@ -54,7 +54,7 @@ const Container = (props: ContainerProps) => {
           <div
             className={`grid ${
               jobs.length < 2 ? "" : "grid-cols-2"
-            } bg-gray-50 border-2 p-5 gap-y-10`}
+            } bg-gray-50 border-2 p-5 gap-y-10 columns`}
           >
             {jobs.length < 1 && (
               <>

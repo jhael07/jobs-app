@@ -62,9 +62,6 @@ function Login() {
                 Submit
               </button>
             </form>
-            {/* <a className="m-auto flex w-3/4 justify-center mt-2 text-sm p-3 " href="/register">
-              Create an account
-            </a> */}
           </div>
         </div>
       )}

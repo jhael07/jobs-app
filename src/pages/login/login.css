@@ -1,5 +1,5 @@
 .login__container {
-  @apply w-[400px] h-[480px] bg-white m-auto  rounded-lg shadow-xl;
+  @apply w-[400px] h-[480px] bg-white m-auto max-w-[98vw]  rounded-lg shadow-xl;
 }
 
 .login__header {

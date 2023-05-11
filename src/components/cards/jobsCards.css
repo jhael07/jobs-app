@@ -1,5 +1,5 @@
 .card__container {
-  @apply w-5/6 p-3 rounded-lg m-auto  border-2 shadow-md bg-white relative;
+  @apply w-5/6 p-3 min-w-fit rounded-lg m-auto  border-2 shadow-md bg-white relative;
 }
 
 .card__action {
