@@ -2,6 +2,9 @@ import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { JobType } from "./jobsCardTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { deleteJob } from "../../api/jobs";
+import EditJob from "../modals/EditJob";
+import { ModalContext } from "../../context/ModalContext";
+import { useContext } from "react";
 import "./jobsCards.css";
 
 interface Job {
@@ -10,6 +13,7 @@ interface Job {
 
 const JobsCard = (props: Job) => {
   const { job } = props;
+  const { setEnableModalEditJob, setModalId } = useContext(ModalContext);
 
   const handleDelete = async (id: null | string) => {
     try {
@@ -18,11 +22,18 @@ const JobsCard = (props: Job) => {
       console.log(err);
     }
   };
+
+  const handleEdit = (id: null | string) => {
+    setEnableModalEditJob(true);
+    if (id) setModalId(id);
+  };
+
   return (
     <>
+      <EditJob {...job} />
       <div className="card__container group">
         <div className="card__action group-hover:opacity-100  group-hover:top-0">
-          <button className="card__action-edit">
+          <button className="card__action-edit" onClick={() => handleEdit(job.id)}>
             <FontAwesomeIcon icon={faPencil} />
           </button>
           <button className="card__action-delete" onClick={() => handleDelete(job?.id)}>
@@ -49,6 +60,7 @@ const JobsCard = (props: Job) => {
                 job.status === "Pending..." && "bg-yellow-200"
               } ${job.status === "Accepted" && "bg-green-300"}
               ${job.status === "Interview" && "bg-cyan-200"}
+              ${job.status === "Rejected" && "bg-red-400 text-red-900"}
               `}
             >
               {job.status}
@@ -59,8 +71,10 @@ const JobsCard = (props: Job) => {
         <div className="flex gap-2 items-center mt-6 w-full">
           <b>Categories:</b>
           <div className="w-full flex gap-3 items-center">
-            {job.categories.map((category: string) => (
-              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded">{category}</span>
+            {job.categories.map((category: string, index: number) => (
+              <span className="bg-blue-300 text-blue-900 p-1 px-2 rounded" key={index}>
+                {category}
+              </span>
             ))}
           </div>
         </div>

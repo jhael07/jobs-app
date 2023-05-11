@@ -5,4 +5,8 @@ import { ModalContextType } from "./contextTypes";
 export const ModalContext = createContext<ModalContextType>({
   enableModalAddJob: false,
   setEnableModalAddJob: () => {},
+  enableModalEditJob: false,
+  setEnableModalEditJob: () => {},
+  modalId: "",
+  setModalId: () => {},
 });

@@ -29,7 +29,6 @@ const Main = () => {
       setFullname([name, lastname]);
     }
   }, []);
-  console.log(isLoading);
   return (
     <>
       {session ? (
