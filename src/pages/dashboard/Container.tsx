@@ -29,7 +29,7 @@ const Container = (props: ContainerProps) => {
 
   // * pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage, setCardsPerPage] = useState<number>(4);
+  const [cardsPerPage] = useState<number>(4);
 
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
