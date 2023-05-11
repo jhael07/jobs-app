@@ -44,9 +44,7 @@ body {
   @apply bg-green-400 p-2  rounded-md  border-4 border-transparent 
   hover:scale-105 transition-all active:scale-95 active:bg-green-400 
   active:font-medium active:text-white active:border-green-700 
-  hover:border-double hover:border-4 hover:border-green-500 hover:bg-transparent
-w
-  ;
+  hover:border-double hover:border-4 hover:border-green-500 hover:bg-transparent;
 }
 
 .input-general {
